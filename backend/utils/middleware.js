@@ -9,6 +9,16 @@ const requestLogger = (request, response, next) => {
   next();
 };
 
+const errorHandler = (error, request, response, next) => {
+  logger.error(error.message)
+
+  if(error.name === "CastError"){
+    return response.status(400).json({err: "malformed id"})
+  }
+
+  next(error)
+}
+
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: "unknown endpoint" });
 };
@@ -16,4 +26,5 @@ const unknownEndpoint = (request, response) => {
 module.exports = {
   requestLogger,
   unknownEndpoint,
+  errorHandler
 };
