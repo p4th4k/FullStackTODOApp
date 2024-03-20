@@ -1,0 +1,7 @@
+.bg-img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 32vh;
+    background: var(--background-image) no-repeat center/cover;
+}

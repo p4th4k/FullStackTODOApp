@@ -1,0 +1,28 @@
+.input {
+  gap: 1em;
+  padding: 2em;
+  height: 50px;
+  border-radius: 5px;
+  background: var(--n-d-very-dark-desat-blue);
+}
+
+.circle {
+  border: 2px solid var(--n-d-very-dark-grayish-blue);
+  width: 25px;
+  height: 22px;
+  border-radius: 500px;
+}
+
+.inputField {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-top: 0.25em;
+  font-size: 1.1em;
+  color: var(--n-d-light-grayish-blue);
+}
+
+input::placeholder {
+  color: var(--n-d-light-grayish-blue-hover);
+}

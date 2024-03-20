@@ -1,0 +1,16 @@
+header{
+    width: 100%;
+    justify-content: space-between;
+}
+
+header h1{
+    color: var(--n-l-very-light-gray);
+    text-transform: uppercase;
+    letter-spacing: .4em;
+}
+
+.theme-toggle{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
