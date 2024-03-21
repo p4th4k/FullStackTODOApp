@@ -8,7 +8,7 @@ const getTodos = () => {
 
 const deleteTodo = (id) => {
   const deleted = axios.delete(`${baseUrl}/deleteTodo/${id}`)
-  return deleted
+  return deleted.then(del => del.data)
 }
 
 export { getTodos, deleteTodo };
