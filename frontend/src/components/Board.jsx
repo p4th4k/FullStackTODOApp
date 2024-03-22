@@ -1,72 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../stylesheets/Board.css";
 import { Reorder } from "framer-motion";
-import { getTodos, deleteTodo } from "../services/todos";
 
-const Board = () => {
-  let listItems = [];
-
-  const [items, setItems] = useState(listItems);
+const Board = ({items, handleClear, handleTodoClick, handleTodoDelete, setItems}) => {
   const [currentTab, setCurrentTab] = useState("all");
-  
-  useEffect(() => {
-    (async () => {
-      setItems(await getTodos());
-    })();
-  }, []);
   
   const handleTabChange = (e) => {
     let tabClicked = e.target.innerText.toLocaleLowerCase();
     setCurrentTab(tabClicked);
   };
-
-  const handleClear = async () => {
-    let newList = [...items]
-
-    for(let i = 0; i < newList.length; i++){
-      if(newList[i].status === "complete"){
-        await deleteTodo(newList[i].id)
-        newList.splice(i, 1)
-      }
-    }
-
-    setItems(newList)
-  };
-
-  const handleTodoClick = (e) => {
-    let title;
-    if(e.target.classList.length > 2) title = e.target.parentElement.parentElement.childNodes[1].innerText
-    else title = e.target.parentElement.childNodes[1].innerText;
-    
-    let newList = items.map((item) => {
-      if(item.title === title){
-        if(item.status === "active"){
-          item.status = "complete"
-          return item
-        }
-        if(item.status === "complete"){
-          item.status = "active"
-          return item
-        }
-      }
-      return item
-    })
-
-    setItems(newList)
-  }
-
-  const handleTodoDelete = async (id) => {
-    let newList = [...items]
-    
-    for(let i = 0; i < newList.length; i++){
-      if(newList[i].id === id){
-        await deleteTodo(id)
-        newList.splice(i, 1)
-      }
-    }
-
-    setItems(newList)
-  }
 
   return (
     <>

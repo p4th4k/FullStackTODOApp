@@ -8,9 +8,13 @@
 
 .circle {
   border: 2px solid var(--n-d-very-dark-grayish-blue);
-  width: 25px;
-  height: 22px;
+  width: 27px;
+  height: 25px;
   border-radius: 500px;
+}
+
+form{
+  width: 100%;
 }
 
 .inputField {

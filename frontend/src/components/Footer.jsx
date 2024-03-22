@@ -7,7 +7,7 @@ const Footer = () => {
         <p className="footer-text josefin-bold">
           Drag and Drop to reorder list
         </p>
-        <div class="attribution josefin-regular">
+        <div className="attribution josefin-regular">
           Challenge by{" "}
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
             Frontend Mentor
