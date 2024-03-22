@@ -6,21 +6,32 @@ import { getTodos, deleteTodo } from "../services/todos";
 const Board = () => {
   let listItems = [];
 
+  const [items, setItems] = useState(listItems);
+  const [currentTab, setCurrentTab] = useState("all");
+  
   useEffect(() => {
     (async () => {
       setItems(await getTodos());
     })();
   }, []);
-
-  const [items, setItems] = useState(listItems);
-  const [currentTab, setCurrentTab] = useState("all");
-
+  
   const handleTabChange = (e) => {
     let tabClicked = e.target.innerText.toLocaleLowerCase();
     setCurrentTab(tabClicked);
   };
 
-  const handleClear = () => {};
+  const handleClear = async () => {
+    let newList = [...items]
+
+    for(let i = 0; i < newList.length; i++){
+      if(newList[i].status === "complete"){
+        await deleteTodo(newList[i].id)
+        newList.splice(i, 1)
+      }
+    }
+
+    setItems(newList)
+  };
 
   const handleTodoClick = (e) => {
     let title;
@@ -40,6 +51,19 @@ const Board = () => {
       }
       return item
     })
+
+    setItems(newList)
+  }
+
+  const handleTodoDelete = async (id) => {
+    let newList = [...items]
+    
+    for(let i = 0; i < newList.length; i++){
+      if(newList[i].id === id){
+        await deleteTodo(id)
+        newList.splice(i, 1)
+      }
+    }
 
     setItems(newList)
   }
@@ -70,7 +94,7 @@ const Board = () => {
                       <div className={item.status === "complete" ? "task-tick show task-tick-adjust" : "task-tick"}></div>
                     </div>
                     <p className={item.status === "complete" ? "task-content task-content-complete" : "task-content"} onClick={handleTodoClick}>{item.title}</p>
-                    <div className="task-cross"></div>
+                    <div className="task-cross" onClick={() => handleTodoDelete(item.id)}></div>
                   </Reorder.Item>
                 );
               }

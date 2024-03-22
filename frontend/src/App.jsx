@@ -3,6 +3,7 @@ import "./stylesheets/App.css";
 import Input from "./components/Input";
 import Board from "./components/Board";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Background from "./components/Background";
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Header theme={theme} handleClick={handleTheme} />
         <Input todo={todo} handleChange={handleTodo} />
         <Board/>
+        <Footer/>
       </main>
     </>
   );

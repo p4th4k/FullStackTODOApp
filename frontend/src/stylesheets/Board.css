@@ -4,7 +4,7 @@
   background: var(--n-d-very-dark-desat-blue);
   border-bottom: 1px solid var(--n-d-very-dark-grayish-blue);
   align-items: center;
-  justify-content: space-between;
+  position: relative;
   padding: 0 1.78em;
   cursor: pointer;
 }
@@ -51,6 +51,8 @@
 }
 
 .task-cross{
+  position: absolute;
+  right: 2em;
   width: 25px;
   height: 25px;
   background: url("../assets/icons/icon-cross.svg") no-repeat;
@@ -59,7 +61,6 @@
 
 .task-content {
   margin-top: 0.25em;
-  width: 89%;
   color: var(--n-d-light-grayish-blue);
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;

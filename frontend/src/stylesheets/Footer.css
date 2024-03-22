@@ -1,0 +1,6 @@
+footer{
+    width: 100%;
+    color: var(--n-d-very-dark-grayish-blue);
+    font-size: 0.9em;
+    gap: 1em;
+}
