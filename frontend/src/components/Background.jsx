@@ -1,9 +1,9 @@
 import "../stylesheets/Background.css"
 
-const Background = () => {
+const Background = ({theme}) => {
   return (
     <>
-      <section className="bg-img"></section>
+      <section className={theme === "dark" ? "bg-img bg-img-dark" : "bg-img bg-img-light"}></section>
     </>
   );
 };

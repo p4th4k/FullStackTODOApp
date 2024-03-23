@@ -1,14 +1,14 @@
 import "../stylesheets/Input.css";
 
-const Input = ({ todo, handleChange, handleSubmit }) => {
+const Input = ({ todo, handleChange, handleSubmit, theme }) => {
   return (
     <>
-      <section className="input flex centre">
-        <div className="circle"></div>
+      <section className={theme === "dark" ? "input input-dark flex centre" : "input input-light flex centre"}>
+        <div className={theme === "dark" ? "circle circle-dark" : "circle circle-light"}></div>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            className="inputField josefin-regular"
+            className={theme === "dark" ? "inputField inputField-dark josefin-regular" : "inputField inputField-light josefin-regular"}
             placeholder="Create a new todo..."
             onChange={handleChange}
             value={todo}

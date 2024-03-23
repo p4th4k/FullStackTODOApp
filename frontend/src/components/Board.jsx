@@ -2,9 +2,16 @@ import { useState } from "react";
 import "../stylesheets/Board.css";
 import { Reorder } from "framer-motion";
 
-const Board = ({items, handleClear, handleTodoClick, handleTodoDelete, setItems}) => {
+const Board = ({
+  items,
+  handleClear,
+  handleTodoClick,
+  handleTodoDelete,
+  setItems,
+  theme,
+}) => {
   const [currentTab, setCurrentTab] = useState("all");
-  
+
   const handleTabChange = (e) => {
     let tabClicked = e.target.innerText.toLocaleLowerCase();
     setCurrentTab(tabClicked);
@@ -30,20 +37,59 @@ const Board = ({items, handleClear, handleTodoClick, handleTodoDelete, setItems}
                   <Reorder.Item
                     key={item.id}
                     value={item}
-                    className="task-card flex"
+                    className={
+                      theme === "dark"
+                        ? "task-card flex task-card-dark"
+                        : "task-card task-card-light flex"
+                    }
                   >
-                    <div className={item.status === "complete" ? "task-circle task-circle-fill" : "task-circle"} onClick={handleTodoClick}>
-                      <div className={item.status === "complete" ? "task-tick show task-tick-adjust" : "task-tick"}></div>
+                    <div
+                      className={
+                        item.status === "complete"
+                          ? "task-circle task-circle-fill"
+                          : "task-circle"
+                      }
+                      onClick={handleTodoClick}
+                    >
+                      <div
+                        className={
+                          item.status === "complete"
+                            ? "task-tick show task-tick-adjust"
+                            : "task-tick"
+                        }
+                      ></div>
                     </div>
-                    <p className={item.status === "complete" ? "task-content task-content-complete" : "task-content"} onClick={handleTodoClick}>{item.title}</p>
-                    <div className="task-cross" onClick={() => handleTodoDelete(item.id)}></div>
+                    <p
+                      className={
+                        item.status === "complete"
+                          ? theme === "dark"
+                            ? "task-content task-content-dark task-content-complete"
+                            : "task-content task-content-light task-content-complete"
+                          : theme === "dark"
+                          ? "task-content task-content-dark"
+                          : "task-content task-content-light"
+                      }
+                      onClick={handleTodoClick}
+                    >
+                      {item.title}
+                    </p>
+                    <div
+                      className="task-cross"
+                      onClick={() => handleTodoDelete(item.id)}
+                    ></div>
                   </Reorder.Item>
                 );
               }
             })}
           </Reorder.Group>
         </div>
-        <div className="navigation flex josefin-bold">
+        <div
+          className={
+            theme === "dark"
+              ? "navigation nav-dark flex josefin-bold task-card-dark"
+              : "navigation nav-light flex josefin-bold task-card-light"
+          }
+        >
           <p className="items-left">{items.length} items left</p>
           <div className="tabs flex">
             <p

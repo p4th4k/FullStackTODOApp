@@ -3,14 +3,28 @@
   padding: 2em;
   height: 50px;
   border-radius: 5px;
+}
+
+.input-light{
+  background: var(--n-l-very-light-gray);
+}
+
+.input-dark{
   background: var(--n-d-very-dark-desat-blue);
 }
 
 .circle {
-  border: 2px solid var(--n-d-very-dark-grayish-blue);
   width: 27px;
   height: 25px;
   border-radius: 500px;
+}
+
+.circle-light{
+  border: 2px solid var(--n-l-dark-grayish-blue)
+}
+
+.circle-dark{
+  border: 2px solid var(--n-d-very-dark-grayish-blue);
 }
 
 form{
@@ -24,9 +38,16 @@ form{
   outline: none;
   margin-top: 0.25em;
   font-size: 1.1em;
+}
+
+.inputField-light{
+  color: var(--n-l-very-dark-grayish-blue);
+}
+
+.inputField-dark{
   color: var(--n-d-light-grayish-blue);
 }
 
-input::placeholder {
+/* input::placeholder {
   color: var(--n-d-light-grayish-blue-hover);
-}
+} */

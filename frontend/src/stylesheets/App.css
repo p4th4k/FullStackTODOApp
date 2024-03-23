@@ -27,7 +27,8 @@
   --n-d-very-dark-grayish-blue-hover: hsl(237, 14%, 26%);
 
   /* Header image */
-  --background-image: url("../assets/bg-desktop-dark.jpg");
+  --background-image-desktop-dark: url("../assets/bg-desktop-dark.jpg");
+  --background-image-desktop-light: url("../assets/bg-desktop-light.jpg");
 }
 
 /* Utility classes */
@@ -55,13 +56,12 @@
   align-items: center;
 }
 
-body {
+main {
   width: 100vw;
   height: 100vh;
-  background: var(--n-d-very-dark-blue);
 }
 
-main {
+.mainSection {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -70,4 +70,12 @@ main {
   height: 100vh;
   justify-content: center;
   gap: 5em;
+}
+
+.dark{
+  background: var(--n-d-very-dark-blue);
+}
+
+.light{
+  background: var(--n-l-very-light-grayish-blue);
 }

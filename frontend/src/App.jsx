@@ -19,15 +19,15 @@ const App = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    let addedTodo = await addTodo(todo)
-    let newList = [...items]
+    let addedTodo = await addTodo(todo);
+    let newList = [...items];
     newList.push(addedTodo);
 
-    setItems(newList)
-    setTodo("")
-  }
+    setItems(newList);
+    setTodo("");
+  };
 
   const handleClear = async () => {
     let newList = [...items];
@@ -65,12 +65,12 @@ const App = () => {
       if (item.title === title) {
         if (item.status === "active") {
           item.status = "complete";
-          updateTodo(item.id, "complete")
+          updateTodo(item.id, "complete");
           return item;
         }
         if (item.status === "complete") {
           item.status = "active";
-          updateTodo(item.id, "active")
+          updateTodo(item.id, "active");
           return item;
         }
       }
@@ -90,12 +90,26 @@ const App = () => {
 
   return (
     <>
-      <Background />
-      <main className="flex flex-col">
-        <Header theme={theme} handleClick={handleTheme} />
-        <Input todo={todo} handleChange={handleTodo} handleSubmit={handleSubmit} />
-        <Board  items={items} setItems={setItems} handleClear={handleClear} handleTodoClick={handleTodoClick} handleTodoDelete={handleTodoDelete} />
-        <Footer />
+      <main className={theme === "dark" ? "dark" : "light"}>
+        <Background theme={theme} />
+        <section className="mainSection flex flex-col">
+          <Header theme={theme} handleClick={handleTheme} />
+          <Input
+            todo={todo}
+            handleChange={handleTodo}
+            handleSubmit={handleSubmit}
+            theme={theme}
+          />
+          <Board
+            items={items}
+            theme={theme}
+            setItems={setItems}
+            handleClear={handleClear}
+            handleTodoClick={handleTodoClick}
+            handleTodoDelete={handleTodoDelete}
+          />
+          <Footer />
+        </section>
       </main>
     </>
   );

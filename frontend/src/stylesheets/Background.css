@@ -3,5 +3,12 @@
     z-index: 0;
     width: 100%;
     height: 32vh;
-    background: var(--background-image) no-repeat center/cover;
+}
+
+.bg-img-light{
+    background: var(--background-image-desktop-light) no-repeat center/cover;
+}
+
+.bg-img-dark{
+    background: var(--background-image-desktop-dark) no-repeat center/cover;
 }
