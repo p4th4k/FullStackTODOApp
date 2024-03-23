@@ -34,7 +34,7 @@ Introducing FullStack todo app. It is the classical todo app but with new functi
 6. [Contribution](#contribution)
 7. [License](#license)
 
-### Technologies used: 
+## Technologies used: 
 
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
 <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge">
@@ -48,14 +48,14 @@ Introducing FullStack todo app. It is the classical todo app but with new functi
 - [x] MongoDB
 - [x] FramerMotion
 
-### Features:
+## Features:
 
 - [x] Create, Read, Update, Delete TODOS
 - [x] Drag and Drop to arrange TODOS
 - [x] Sorting of TODOS on the basis of status
 - [x] Dark and Light theme
 
-### Usage: 
+## Usage: 
 To setup the project locally, with backend support:
 
 1. Clone the repository:
@@ -90,7 +90,7 @@ FullStackTODOApp/backend$ node index.js
 
 By default the frontend will run at [localhost:5173](localhost:5173)
 
-### Learnings:
+## Learnings:
 
 - Using ReactJS to create frontend
   - Making use of react components.
@@ -106,14 +106,14 @@ By default the frontend will run at [localhost:5173](localhost:5173)
     - Using expressjs to create api
     - Performing CURD operations on database via api calls
 
-### Improvements:
+## Improvements:
 - Improving the responsiveness
 - Checking for duplicate todos in frontend as well as backend
 
-### Contribution:
+## Contribution:
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-### License
+## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
