@@ -46,8 +46,8 @@ const Board = ({
                     <div
                       className={
                         item.status === "complete"
-                          ? "task-circle task-circle-fill"
-                          : "task-circle"
+                          ? "task-circle m n task-circle-fill"
+                          : "task-circle m n"
                       }
                       onClick={handleTodoClick}
                     >
