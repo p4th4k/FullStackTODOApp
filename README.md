@@ -55,12 +55,12 @@ Introducing FullStack todo app. It is the classical todo app but with new functi
 To setup the project locally, with backend support:
 
 1. Clone the repository:
-```bash
+```console
 $ git clone https://github.com/p4th4k/FullStackTODOApp.git
 ```
 
 2. Install dependencies:
-```bash
+```console
 FullStackTODOApp/frontend$ npm install
 FullStackTODOApp/backend$ npm install 
 ```
@@ -79,7 +79,7 @@ In ``` FullStackTODOApp/frontend/src/main.jsx ```, the mode variable dictates th
 - If mode variable is set to ```PROD```, it will take backend into use.
 
 5. Run the project:
-```sh
+```console
 FullStackTODOApp/frontend$ npm run dev
 FullStackTODOApp/backend$ node index.js
 ```
